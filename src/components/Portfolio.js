@@ -15,7 +15,9 @@ const Portfolio = () => {
       points: [
         "Owned and executed the migration of the primary website of ICICI Bank to Adobe Experience Manager (CMS) as per planned timelines.",
         "Led a cross-functional team to enhance ICICI Bank's primary website for non-logged-in users, utilizing Adobe Analytics and Adobe Target to achieve a 20% increase in user engagement.",
-        "Spearheaded the transition to the Martech project, integrating the Adobe suite of solutions, resulting in a 6% increase in conversion rates."
+        "Spearheaded the transition to the Martech project, taking ownership of onboarding 6 channels and integrating the Adobe suite of solutions, including Adobe Analytics and Adobe Target. This strategic initiative resulted in a 6% increase in conversion rates through enhanced tracking, retargeting and real-time customer profiling.",
+        "Developed and orchestrated comprehensive strategic and tactical plans for 18 months ensuring seamless execution through effective cross-functional team collaboration.",
+        "Responsible for overseeing governance and security throughout the entire digital transformation project, ensuring robust protection and compliant execution."
       ]
     },
     {
@@ -25,7 +27,9 @@ const Portfolio = () => {
       location: "Remote",
       points: [
         "Recognized by senior product leaders from Mastercard, CRED, PayTM, and Myntra in the cohort.",
-        "Authored industry-grade PRDs, vetted and approved by a Senior PM from CRED."
+        "Authored industry-grade PRDs, vetted and approved by a Senior PM from CRED.",
+        "Evaluated Rapido’s switching issue, securing a top 2 ranking in the entire cohort of more than 80 people.",
+        "Conducted in-depth product teardowns and observations during a rigorous 16-week program."
       ]
     },
     {
@@ -35,9 +39,22 @@ const Portfolio = () => {
       location: "Pune",
       points: [
         "Integrated external systems with Salesforce via Mule for customer credit history assessment.",
+        "Developed a consent management site for Business and Personal Banking products through SMS and email links.",
+        "Created a Global Search feature for cross-sell functionality, enabling case searches by Loan Number and Name.",
         "Implemented Aadhar Vault Integration to mask Aadhar Numbers using Salesforce's Outbound Messages SOAP API."
       ]
-    }
+    },
+    {
+        company: "Perpule",
+        role: "Software Development Intern",
+        period: "May 19 - Jul 19",
+        location: "Bangalore",
+        points: [
+          "Engineered a payment microservice using Rest APIs, Spring Boot, Cloud SQL, and Google App Engine.",
+          "Designed and developed BO and DAO classes for Amazon Pay, Paytm Auto Debit, PhonePe, and Paytm UPI.",
+          "Enhanced payment methods, refactored code, and optimized components, reducing transaction latency by 83%."
+        ]
+      }
   ];
 
   const projects = [
@@ -218,7 +235,7 @@ const Portfolio = () => {
             {/* Text Content */}
             <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-cyan-400">
-                Product Manager & Tech Enthusiast
+                Summary
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
                 Senior Technical Manager at ICICI Bank with a passion for building innovative digital products. I combine my technical expertise with strong product sense to deliver exceptional user experiences.
@@ -244,6 +261,7 @@ const Portfolio = () => {
                     </li>
                     </ul>
                 </div>
+                {/*
                 <div className="space-y-2">
                     <h4 className="text-xl font-semibold text-cyan-400">Tech Stack</h4>
                     <ul className="space-y-2">
@@ -260,7 +278,7 @@ const Portfolio = () => {
                         <span className="text-gray-300">Adobe Target</span>
                     </li>
                     </ul>
-                </div>
+                </div> */}
                 </div>
             </div>
             
