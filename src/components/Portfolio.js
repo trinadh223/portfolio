@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, ChevronRight, Mail, ExternalLink, ArrowRight, Award, Download } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown, Mail, ExternalLink, ArrowRight, Award, Download } from 'lucide-react';
 import profileImage from '../assets/main-profile-image.jpeg'
 
 const Portfolio = () => {
@@ -178,18 +178,22 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-5xl font-bold">
-              Product Manager
-              <span className="block text-cyan-400 mt-2">Passionate about building products</span>
+              Trinadh Divvela
+              <span className="block text-cyan-400 mt-2">Product Manager</span>
             </h1>
             <p className="text-gray-300 text-lg">
-              Crafting innovative and user-centric digital solutions through data-driven decision making and thoughtful design.
+              Passionate about building innovative and user-centric products through data-driven decision making and thoughtful design.
             </p>
             <div className="flex gap-4">
-              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center gap-2">
-                View Projects <ChevronRight size={20} />
+              <button 
+                onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center gap-2">
+                View Projects <ChevronDown size={20} />
               </button>
-              <button className="px-6 py-3 border border-cyan-500/50 rounded-lg hover:bg-cyan-500/10 transition-colors duration-300 flex items-center gap-2">
-                Contact Me <Mail size={20} />
+              <button 
+                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                className="px-6 py-3 border border-cyan-500/50 rounded-lg hover:bg-cyan-500/10 transition-colors duration-300 flex items-center gap-2">
+                Contact Me
               </button>
             </div>
           </div>
@@ -280,6 +284,52 @@ const Portfolio = () => {
                 </div>
             </div>
             </div>
+        </div>
+        </section>
+
+    {/* Education Section */}
+        <section id="education" className="py-20 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
+            Education
+        </h2>
+        <div className="grid grid-cols-3 gap-8">
+            {/* Engineering */}
+            <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative">
+                <div className="mb-4">
+                <h3 className="text-xl font-bold text-cyan-400">Indian Institute of Technology, Kharagpur</h3>
+                <p className="text-gray-400">B.Tech, Civil Engineering</p>
+                <span className="text-purple-400">2016 - 2020</span>
+                </div>
+            </div>
+            </div>
+
+            {/* Intermediate */}
+            <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative">
+                <div className="mb-4">
+                <h3 className="text-xl font-bold text-cyan-400">Sri Chaitanya Educational Institutions, Gudavalli</h3>
+                <p className="text-gray-400">Intermediate Education (MPC)</p>
+                <span className="text-purple-400">2014 - 2016</span>
+                </div>
+            </div>
+            </div>
+
+            {/* Secondary */}
+            <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative">
+                <div className="mb-4">
+                <h3 className="text-xl font-bold text-cyan-400">DR. K.K.R's Gowtham Concept School, Tenali</h3>
+                <p className="text-gray-400">Secondary School Education</p>
+                <span className="text-purple-400">2013 - 2014</span>
+                </div>
+            </div>
+            </div>
+        </div>
         </div>
         </section>
 
@@ -420,30 +470,121 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-            Get In Touch
-          </h2>
-          <div className="flex justify-center space-x-8">
-            <a 
-              href="mailto:trinadh.divvela@gmail.com" 
-              className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
-            >
-              <Mail size={24} />
-              <span>Email</span>
-            </a>
-            <a 
-              href="#" 
-              className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
-            >
-              <ExternalLink size={24} />
-              <span>LinkedIn</span>
-            </a>
-          </div>
+        {/* Social & Connect Section */}
+        <section id="contact" className="py-20 bg-gray-900/50">
+        <div className="max-w-5xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-16 text-blue-400">
+            Let's Connect
+            </h2>
+            
+            {/* Main Contact Grid */}
+            <div className="grid md:grid-cols-3 gap-12 mb-24">
+            {/* Primary Contact */}
+            <div className="px-8 py-6 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-6">
+                <h3 className="text-xl text-cyan-400 flex items-center gap-2">
+                <Mail size={20} />
+                Primary Contact
+                </h3>
+                <div className="space-y-4">
+                <a 
+                    href="mailto:trinadh.divvela@gmail.com" 
+                    className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                >
+                    trinadh.divvela@gmail.com
+                </a>
+                <a 
+                    href="https://www.linkedin.com/in/trinadhdivvela" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                >
+                    LinkedIn
+                </a>
+                </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="px-8 py-6 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-6">
+                <h3 className="text-xl text-purple-400 flex items-center gap-2">
+                <ExternalLink size={20} />
+                Social Links
+                </h3>
+                <div className="space-y-4">
+                <a 
+                    href="https://twitter.com/your-twitter" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                >
+                    Twitter
+                </a>
+                <a 
+                    href="https://instagram.com/your-instagram" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                >
+                    Instagram
+                </a>
+                <a 
+                    href="https://facebook.com/your-facebook" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                >
+                    Facebook
+                </a>
+                </div>
+            </div>
+
+            {/* Content */}
+            <div className="px-8 py-6 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-6">
+                <h3 className="text-xl text-cyan-400 flex items-center gap-2">
+                <ExternalLink size={20} />
+                Content
+                </h3>
+                <div className="space-y-4">
+                <a 
+                    href="https://medium.com/@your-medium" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                >
+                    Medium Articles
+                </a>
+                <a 
+                    href="https://github.com/your-github" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                >
+                    GitHub
+                </a>
+                </div>
+            </div>
+            </div>
+
+            {/* Centered Schedule Meeting Section */}
+            <div className="max-w-md mx-auto text-center border-t border-gray-800 pt-16">
+            <div className="space-y-6">
+                <h3 className="text-xl text-pink-400 flex items-center gap-2 justify-center">
+                <Mail size={20} />
+                Schedule a Meeting
+                </h3>
+                <p className="text-gray-300">Book a slot for a quick chat or discussion</p>
+                <a 
+                href="https://calendly.com/your-calendly-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 text-pink-400 border border-pink-400/30 rounded-lg hover:bg-pink-400/10 transition-all duration-300"
+                >
+                Book a Slot
+                </a>
+            </div>
+            </div>
         </div>
-      </section>
+        </section>
+
 
       {/* Download CV Section */}
       <section className="py-12 bg-gradient-to-r from-cyan-900/20 to-purple-900/20">
