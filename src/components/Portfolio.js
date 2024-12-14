@@ -505,7 +505,7 @@ const Portfolio = () => {
                     href="mailto:trinadh.divvela@gmail.com" 
                     className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
                 >
-                    trinadh.divvela@gmail.com
+                    Email
                 </a>
                 <a 
                     href="https://www.linkedin.com/in/trinadhdivvela" 
@@ -526,15 +526,15 @@ const Portfolio = () => {
                 </h3>
                 <div className="space-y-4">
                 <a 
-                    href="https://twitter.com/your-twitter" 
+                    href="https://x.com/trinadh_divvela" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-gray-300 hover:text-purple-400 transition-colors duration-300"
                 >
-                    Twitter
+                    Twitter / X
                 </a>
                 <a 
-                    href="https://instagram.com/your-instagram" 
+                    href="https://instagram.com/trinadh_223" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-gray-300 hover:text-purple-400 transition-colors duration-300"
@@ -542,7 +542,7 @@ const Portfolio = () => {
                     Instagram
                 </a>
                 <a 
-                    href="https://facebook.com/your-facebook" 
+                    href="https://facebook.com/trinadhdivvela" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-gray-300 hover:text-purple-400 transition-colors duration-300"
@@ -560,15 +560,15 @@ const Portfolio = () => {
                 </h3>
                 <div className="space-y-4">
                 <a 
-                    href="https://medium.com/@your-medium" 
+                    href="https://medium.com/@trinadhdivvela" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
                 >
-                    Medium Articles
+                    Medium
                 </a>
                 <a 
-                    href="https://github.com/your-github" 
+                    href="https://github.com/trinadh223" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
@@ -588,7 +588,7 @@ const Portfolio = () => {
                 </h3>
                 <p className="text-gray-300">Book a slot for a quick chat or discussion</p>
                 <a 
-                href="https://calendly.com/your-calendly-link"
+                href="https://calendly.com/trinadh08/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 text-pink-400 border border-pink-400/30 rounded-lg hover:bg-pink-400/10 transition-all duration-300"
