@@ -106,27 +106,22 @@ const Portfolio = () => {
 
   const achievements = [
     {
-      title: "JEE Advanced Excellence",
+      title: "Academic Acheivements",
       items: [
         "Ranked among the top 1% of all students in JEE Advanced 2016",
         "Ranked among the top 0.3% of a million students in JEE Mains Paper-1 in 2016",
-        "Secured an All India Rank of 549 in JEE Mains Paper-II in 2016"
-      ]
-    },
-    {
-      title: "Academic Distinctions",
-      items: [
+        "Secured an All India Rank of 549 in JEE Mains Paper-II in 2016",
         "Secured State Rank of 296 in AP EAMCET in 2016",
         "Secured State Rank of 234 in TS EAMCET in 2016",
-        "Secured an All India Rank of 26 in SITET (Smart India Talent Exam) in 2012"
+        "Secured an All India Rank of 26 in SITET (Smart India Talent Exam) in 2012",
+        "Reached the INMO (3rd Level) in the International Mathematics Olympiad by HBCSE"
       ]
     },
     {
       title: "Professional Recognition",
       items: [
         "Received Bravo Team Award at Persistent Systems (Ex-Employer)",
-        "Recognized by senior product leaders from Mastercard, CRED, PayTM, and Myntra",
-        "Reached the INMO (3rd Level) in the International Mathematics Olympiad by HBCSE"
+        "Recognized by senior product leaders from Mastercard, CRED, PayTM, and Myntra"
       ]
     }
   ];
@@ -285,20 +280,21 @@ const Portfolio = () => {
             {/* Stats/Highlights */}
             <div className="grid grid-cols-2 gap-6">
                 <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-cyan-400 mb-2">2+</div>
+                <div className="text-3xl font-bold text-cyan-400 mb-2">4+</div>
+                <div className="text-gray-300">Years of Work Experience</div>
+                </div>
+                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                <div className="text-3xl font-bold text-purple-400 mb-2">2+</div>
                 <div className="text-gray-300">Years of Product Experience</div>
                 </div>
+                
                 <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-purple-400 mb-2">20%</div>
-                <div className="text-gray-300">Increase in User Engagement</div>
+                <div className="text-3xl font-bold text-cyan-400 mb-2"></div>
+                <div className="text-gray-300"></div>
                 </div>
                 <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-cyan-400 mb-2">6%</div>
-                <div className="text-gray-300">Conversion Rate Improvement</div>
-                </div>
-                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-purple-400 mb-2">10+</div>
-                <div className="text-gray-300">Projects Delivered</div>
+                <div className="text-3xl font-bold text-purple-400 mb-2"></div>
+                <div className="text-gray-300"></div>
                 </div>
             </div>
             </div>
@@ -464,7 +460,7 @@ const Portfolio = () => {
           <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
             Achievements & Recognition
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {achievements.map((category, index) => (
               <div 
                 key={index}
@@ -488,8 +484,8 @@ const Portfolio = () => {
         </div>
       </section>
 
-        {/* Social & Connect Section */}
-        <section id="contact" className="py-20 bg-gray-900/50">
+      {/* Social & Connect Section */}
+      <section id="contact" className="py-20 bg-gray-900/50">
         <div className="max-w-5xl mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16 text-blue-400">
             Let's Connect
@@ -601,14 +597,13 @@ const Portfolio = () => {
             </div>
             </div>
         </div>
-        </section>
-
+      </section>
 
       {/* Download CV Section */}
       <section className="py-12 bg-gradient-to-r from-cyan-900/20 to-purple-900/20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col items-center justify-center text-center">
-            <h2 className="text-2xl font-bold text-cyan-400 mb-4">Ready to Learn More?</h2>
+            <h2 className="text-2xl font-bold text-cyan-400 mb-4"></h2>
             <p className="text-gray-300 mb-6">Download my CV for a complete overview of my experience and skills</p>
             <button 
               onClick={handleDownloadCV}
