@@ -92,15 +92,16 @@ const Portfolio = () => {
   const skills = [
     {
       category: "Product",
-      items: ["Market Research", "Structured Thinking", "Stakeholder Management", "Data-driven Decision Making"]
+      items: ["Market Research", "Structured Thinking", "Stakeholder Management", "Data-driven Decision Making", "Ownership", "Project Management", "User Journeys",
+      "Product Roadmap", "Root Cause Analysis", "First Principle Thinking"]
     },
     {
       category: "Technical",
-      items: ["Adobe Analytics", "Adobe Target", "JIRA", "API Design"]
+      items: ["Adobe Analytics", "Adobe Target", "API Integration", "SQL", "Salesforce", "Adobe Experience Manager"]
     },
     {
       category: "Tools",
-      items: ["Figma", "Adobe Suite", "Confluence", "A/B Testing"]
+      items: ["Figma", "Whimsical", "Miro", "JIRA", "Google Analytics", "Notion"]
     }
   ];
 
@@ -289,12 +290,12 @@ const Portfolio = () => {
                 </div>
                 
                 <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-cyan-400 mb-2"></div>
-                <div className="text-gray-300"></div>
+                <div className="text-3xl font-bold text-cyan-400 mb-2"> </div>
+                <div className="text-gray-300"> </div>
                 </div>
                 <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-purple-400 mb-2"></div>
-                <div className="text-gray-300"></div>
+                <div className="text-3xl font-bold text-purple-400 mb-2"> </div>
+                <div className="text-gray-300"> </div>
                 </div>
             </div>
             </div>
