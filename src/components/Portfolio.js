@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronRight, Mail, ExternalLink, ArrowRight, Award, Download } from 'lucide-react';
+import profileImage from '../assets/main-profile-image.jpeg'
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,19 +45,30 @@ const Portfolio = () => {
       title: "Rapido Switching Problem",
       description: "Product teardown analysis focusing on user experience and retention",
       tags: ["Product Analysis", "UX Research", "User Retention"],
-      link: "#"
+      link: "https://www.canva.com/design/DAFdSav_J_s/nmE95Ebp7cZPIIFiXtmGig/edit?utm_content=DAFdSav_J_s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      image: `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent("Rapido Switching Problem")}`
     },
     {
       title: "Disney + Hotstar PRD",
       description: "Comprehensive PRD for increasing user engagement metrics",
       tags: ["Product Strategy", "User Engagement", "PRD"],
-      link: "#"
+      link: "https://docs.google.com/document/d/1yDtXkEadGnA8nEAGgb_pTWskOyb0u6fqU8953Wn3dN8/edit?usp=sharing",
+      image: `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent("Disney + Hotstar PRD")}`
+
+    },
+    {
+        title: "Amazon Packaging Recycle Case Study",
+        description: "Detailed Case study of Amazon package recycling.",
+        tags: ["Feature Analysis", "Product Design", "UX", "GTM Strategy", "Wireframing"],
+        link: "https://docs.google.com/document/d/1j3DEABD1Zg0JcAEsdFKsvfVX8OWipkXjTVRLzyJfxOI/edit?usp=sharing",
+        image: `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent("Amazon Packaging Recycle Case Study")}`
     },
     {
       title: "Whatsapp Status Feature",
       description: "Detailed feature breakdown and improvement analysis",
       tags: ["Feature Analysis", "Product Design", "UX"],
-      link: "#"
+      link: "https://www.canva.com/design/DAFWJJjyQKQ/ScdFI3EfdV9r8uDEivG6WA/edit?utm_content=DAFWJJjyQKQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      image: `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent("Whatsapp Status Feature")}`
     }
   ];
 
@@ -104,7 +116,7 @@ const Portfolio = () => {
 
   const handleDownloadCV = () => {
     // Replace with your actual CV link
-    window.open('your-cv-link-here', '_blank');
+    window.open('https://docs.google.com/document/d/18CwT9-50cxi2JonkBdxhfdDvbtDwVHSR5KZnj9Cb0ow/edit?usp=sharing', '_blank');
   };
 
   return (
@@ -184,13 +196,92 @@ const Portfolio = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
             <img 
-              src="/api/placeholder/400/400" 
+              src={profileImage}
               alt="Profile" 
               className="relative rounded-full w-full max-w-md mx-auto border-2 border-cyan-500/50"
             />
           </div>
         </div>
       </section>
+
+      {/* About Me Section */}
+        <section id="about" className="py-20 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
+            About Me
+            </h2>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-cyan-400">
+                Product Manager & Tech Enthusiast
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                Senior Technical Manager at ICICI Bank with a passion for building innovative digital products. I combine my technical expertise with strong product sense to deliver exceptional user experiences.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                My journey includes leading cross-functional teams, executing large-scale digital transformations, and driving significant improvements in user engagement and conversion rates.
+                </p>
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                <div className="space-y-2">
+                    <h4 className="text-xl font-semibold text-cyan-400">Product Focus</h4>
+                    <ul className="space-y-2">
+                    <li className="flex items-center space-x-2">
+                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                        <span className="text-gray-300">User-Centric Design</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                        <span className="text-gray-300">Data-Driven Decisions</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                        <span className="text-gray-300">Strategic Planning</span>
+                    </li>
+                    </ul>
+                </div>
+                <div className="space-y-2">
+                    <h4 className="text-xl font-semibold text-cyan-400">Tech Stack</h4>
+                    <ul className="space-y-2">
+                    <li className="flex items-center space-x-2">
+                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                        <span className="text-gray-300">Adobe Experience Manager</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                        <span className="text-gray-300">Adobe Analytics</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                        <span className="text-gray-300">Adobe Target</span>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            
+            {/* Stats/Highlights */}
+            <div className="grid grid-cols-2 gap-6">
+                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">2+</div>
+                <div className="text-gray-300">Years of Product Experience</div>
+                </div>
+                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                <div className="text-3xl font-bold text-purple-400 mb-2">20%</div>
+                <div className="text-gray-300">Increase in User Engagement</div>
+                </div>
+                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">6%</div>
+                <div className="text-gray-300">Conversion Rate Improvement</div>
+                </div>
+                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                <div className="text-3xl font-bold text-purple-400 mb-2">10+</div>
+                <div className="text-gray-300">Projects Delivered</div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
 
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-gray-900/50">
@@ -235,15 +326,20 @@ const Portfolio = () => {
             Featured Projects
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <a 
+          {projects.map((project, index) => (
+            <a 
                 href={project.link}
                 key={index}
                 className="group bg-gray-800/50 rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300"
-              >
+            >
                 <div className="h-48 bg-gray-700/50 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <ExternalLink className="absolute top-4 right-4 text-cyan-400 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300" />
+                <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <ExternalLink className="absolute top-4 right-4 text-cyan-400 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-cyan-400 mb-2">{project.title}</h3>
