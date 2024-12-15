@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronRight, ChevronDown, Mail, ExternalLink, ArrowRight, Award, Download } from 'lucide-react';
 import profileImage from '../assets/main-profile-image.jpeg'
+import BlogCarousel from './BlogCarousel';
+
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -302,7 +304,7 @@ const Portfolio = () => {
         </div>
         </section>
 
-    {/* Education Section */}
+      {/* Education Section */}
         <section id="education" className="py-20 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
@@ -484,6 +486,9 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+     
+      {/* Blog Carousel Section */}
+      <BlogCarousel />
 
       {/* Social & Connect Section */}
       <section id="contact" className="py-20 bg-gray-900/50">
