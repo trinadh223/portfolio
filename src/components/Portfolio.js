@@ -594,116 +594,115 @@ const Portfolio = () => {
       {/* Contact section */}
       <section id="contact" className="py-20 bg-gray-900/50">
         <div className="max-w-5xl mx-auto px-4">
-            {/* Add back the heading */}
-            <h2 className="text-4xl font-bold text-center mb-16 text-blue-400">
+          <h2 className="text-4xl font-bold text-center mb-16 text-blue-400">
             Let's Connect
-            </h2>
-            
-            {/* Main Contact Grid - reduced padding and width */}
-            <div className="grid md:grid-cols-3 gap-8 mb-24">
+          </h2>
+          
+          {/* Main Contact Grid - center-aligned */}
+          <div className="grid md:grid-cols-3 gap-8 mb-24">
             {/* Primary Contact */}
-            <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4">
-                <h3 className="text-lg text-cyan-400">Primary Contact</h3>
-                <div className="space-y-3">
+            <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4 text-center">
+              <h3 className="text-lg text-cyan-400">Primary Contact</h3>
+              <div className="space-y-3 flex flex-col items-center">
                 <a 
-                    href="mailto:trinadh.divvela@gmail.com" 
-                    className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                  href="mailto:trinadh.divvela@gmail.com" 
+                  className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
                 >
-                    <Mail size={18} />
-                    <span>Email</span>
+                  <Mail size={18} />
+                  <span>Email</span>
                 </a>
                 <a 
-                    href="https://www.linkedin.com/in/trinadhdivvela" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                  href="https://www.linkedin.com/in/trinadhdivvela" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
                 >
-                    <Linkedin size={18} />
-                    <span>LinkedIn</span>
+                  <Linkedin size={18} />
+                  <span>LinkedIn</span>
                 </a>
-                </div>
+              </div>
             </div>
 
             {/* Social Links */}
-            <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4">
-                <h3 className="text-lg text-purple-400">Social Links</h3>
-                <div className="space-y-3">
+            <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4 text-center">
+              <h3 className="text-lg text-purple-400">Social Links</h3>
+              <div className="space-y-3 flex flex-col items-center">
                 <a 
-                    href="https://x.com/trinadh_divvela" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                  href="https://x.com/trinadh_divvela" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
                 >
-                    <Twitter size={18} />
-                    <span>Twitter / X</span>
+                  <Twitter size={18} />
+                  <span>Twitter / X</span>
                 </a>
                 <a 
-                    href="https://instagram.com/trinadh_223" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                  href="https://instagram.com/trinadh_223" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
                 >
-                    <Instagram size={18} />
-                    <span>Instagram</span>
+                  <Instagram size={18} />
+                  <span>Instagram</span>
                 </a>
                 <a 
-                    href="https://facebook.com/trinadhdivvela" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                  href="https://facebook.com/trinadhdivvela" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
                 >
-                    <Facebook size={18} />
-                    <span>Facebook</span>
+                  <Facebook size={18} />
+                  <span>Facebook</span>
                 </a>
-                </div>
+              </div>
             </div>
 
             {/* Content */}
-            <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4">
-                <h3 className="text-lg text-cyan-400">Content</h3>
-                <div className="space-y-3">
+            <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4 text-center">
+              <h3 className="text-lg text-cyan-400">Content</h3>
+              <div className="space-y-3 flex flex-col items-center">
                 <a 
-                    href="https://medium.com/@trinadhdivvela" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                  href="https://medium.com/@trinadhdivvela" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
                 >
-                    <ExternalLink size={18} />
-                    <span>Medium</span>
+                  <ExternalLink size={18} />
+                  <span>Medium</span>
                 </a>
                 <a 
-                    href="https://github.com/trinadh223" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                  href="https://github.com/trinadh223" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
                 >
-                    <Github size={18} />
-                    <span>GitHub</span>
+                  <Github size={18} />
+                  <span>GitHub</span>
                 </a>
-                </div>
+              </div>
             </div>
-            </div>
+          </div>
 
-            {/* Schedule Meeting Section remains the same */}
-            <div className="max-w-md mx-auto text-center border-t border-gray-800 pt-16">
+          {/* Schedule Meeting Section */}
+          <div className="max-w-md mx-auto text-center border-t border-gray-800 pt-16">
             <div className="space-y-6">
-                <h3 className="text-xl text-pink-400 flex items-center gap-2 justify-center">
+              <h3 className="text-xl text-pink-400 flex items-center gap-2 justify-center">
                 <Mail size={20} />
                 Schedule a Meeting
-                </h3>
-                <p className="text-gray-300">Book a slot for a quick chat or discussion</p>
-                <a 
+              </h3>
+              <p className="text-gray-300">Book a slot for a quick chat or discussion</p>
+              <a 
                 href="https://calendly.com/trinadh08/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 text-pink-400 border border-pink-400/30 rounded-lg hover:bg-pink-400/10 transition-all duration-300"
-                >
+              >
                 Book a Slot
-                </a>
+              </a>
             </div>
-            </div>
+          </div>
         </div>
-        </section>
+      </section>
 
       {/* Download CV Section */}
       <section className="py-12 bg-gradient-to-r from-cyan-900/20 to-purple-900/20">
