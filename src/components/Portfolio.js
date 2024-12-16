@@ -584,9 +584,6 @@ const Portfolio = () => {
       {/* Blog Carousel Section */}
       <section id="blog" className="py-20 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-            Latest Blog Posts
-          </h2>
           <BlogCarousel />
         </div>
       </section>
