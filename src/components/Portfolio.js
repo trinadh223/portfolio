@@ -4,11 +4,12 @@ import profileImage from '../assets/main-profile-image.jpeg'
 import BlogCarousel from './BlogCarousel';
 import { Linkedin, Twitter, Instagram, Facebook, Github } from 'lucide-react';
 
-
+const BASE_URL = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  
   
   const experiences = [
     {
@@ -67,14 +68,14 @@ const Portfolio = () => {
       description: "Product teardown analysis focusing on user experience and retention",
       tags: ["Product Analysis", "UX Research", "User Retention"],
       link: "https://www.canva.com/design/DAFdSav_J_s/nmE95Ebp7cZPIIFiXtmGig/edit?utm_content=DAFdSav_J_s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      image: "/images/projects/rapido-image.jpeg"
+      image: `${BASE_URL}/images/projects/rapido-image.jpeg`
     },
     {
       title: "Disney + Hotstar PRD",
       description: "Comprehensive PRD for increasing user engagement metrics",
       tags: ["Product Strategy", "User Engagement", "PRD"],
       link: "https://docs.google.com/document/d/1yDtXkEadGnA8nEAGgb_pTWskOyb0u6fqU8953Wn3dN8/edit?usp=sharing",
-      image: "/images/projects/disneyhotstar.jpeg"
+      image: `${BASE_URL}/images/projects/disneyhotstar.jpeg`
 
     },
     {
@@ -82,14 +83,14 @@ const Portfolio = () => {
         description: "Detailed Case study of Amazon package recycling.",
         tags: ["Feature Analysis", "Product Design", "UX", "GTM Strategy", "Wireframing"],
         link: "https://docs.google.com/document/d/1j3DEABD1Zg0JcAEsdFKsvfVX8OWipkXjTVRLzyJfxOI/edit?usp=sharing",
-        image: "/images/projects/amazonpackage.jpeg"
+        image: `${BASE_URL}/images/projects/amazonpackage.jpeg`
     },
     {
       title: "Whatsapp Status Feature",
       description: "Detailed feature breakdown and improvement analysis",
       tags: ["Feature Analysis", "Product Design", "UX"],
       link: "https://www.canva.com/design/DAFWJJjyQKQ/ScdFI3EfdV9r8uDEivG6WA/edit?utm_content=DAFWJJjyQKQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      image: "/images/projects/whatsappimage.jpeg"
+      image: `${BASE_URL}/images/projects/whatsappimage.jpeg`
     }
   ];
 
