@@ -213,12 +213,12 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg z-50 border-b border-cyan-500/20">
+        <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg z-50 border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto lg:px-0">
-            <div className="flex items-center justify-between h-16">
-                <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text -ml-4">
-                    Trinadh Divvela
-                </span>
+            <div className="flex items-center justify-between h-16 px-4">
+            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text ml-0 sm:-ml-4">
+                Trinadh Divvela
+            </span>
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
             <NavLink active={activeSection === 'home'} href="#home">Home</NavLink>
@@ -251,25 +251,28 @@ const Portfolio = () => {
                 <NavLink active={activeSection === 'projects'} href="#projects">Projects</NavLink>
                 <NavLink active={activeSection === 'skills'} href="#skills">Skills</NavLink>
                 
-                {/* More Section Items */}
+                {/* More Section for Mobile */}
                 <div className="border-t border-gray-700 pt-4">
-                    <p className="text-sm text-gray-400 mb-2 px-2">More</p>
-                    <NavLink active={activeSection === 'education'} href="#education">Education</NavLink>
-                    <NavLink active={activeSection === 'experience'} href="#experience">Experience</NavLink>
-                    <NavLink active={activeSection === 'achievements'} href="#achievements">Achievements</NavLink>
-                    <NavLink active={activeSection === 'blog'} href="#blog">Blog</NavLink>
+                    <p className="text-sm text-gray-400 mb-3 px-2">More</p>
+                    <div className="flex flex-col gap-3">
+                    <NavLink active={activeSection === 'education'} href="#education" className="block">Education</NavLink>
+                    <NavLink active={activeSection === 'experience'} href="#experience" className="block">Experience</NavLink>
+                    <NavLink active={activeSection === 'achievements'} href="#achievements" className="block">Achievements</NavLink>
+                    <NavLink active={activeSection === 'blog'} href="#blog" className="block">Blog</NavLink>
+                    </div>
                 </div>
 
                 <div className="border-t border-gray-700 pt-4">
                     <NavLink active={activeSection === 'contact'} href="#contact">Contact</NavLink>
-                    <button 
+                </div>
+                
+                <button 
                     onClick={handleDownloadCV}
-                    className="w-full mt-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2"
-                    >
+                    className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2"
+                >
                     <Download size={16} />
                     Download CV
-                    </button>
-                </div>
+                </button>
                 </div>
             </div>
             )}
