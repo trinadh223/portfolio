@@ -95,11 +95,6 @@ const Portfolio = () => {
     }
   ];
 
-  projects.map((project) => {
-    console.log(`Project ${project.title} image path:`, project.image);
-    return project;
-  });
-
   const skills = [
     {
       category: "Product",
@@ -497,6 +492,8 @@ const Portfolio = () => {
             <a 
                 href={project.link}
                 key={index}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group bg-gray-800/50 rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300"
             >
                 <div className="h-48 bg-gray-700/50 relative overflow-hidden">
