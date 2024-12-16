@@ -245,7 +245,7 @@ const Portfolio = () => {
                 My journey includes leading cross-functional teams, executing large-scale digital transformations, and driving significant improvements in user engagement and conversion rates.
                 </p>
                 <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="space-y-2">
+                {/*<div className="space-y-2">
                     <h4 className="text-xl font-semibold text-cyan-400">Product Focus</h4>
                     <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -261,7 +261,7 @@ const Portfolio = () => {
                         <span className="text-gray-300">Strategic Planning</span>
                     </li>
                     </ul>
-                </div>
+                </div> */}
                 {/*
                 <div className="space-y-2">
                     <h4 className="text-xl font-semibold text-cyan-400">Tech Stack</h4>
