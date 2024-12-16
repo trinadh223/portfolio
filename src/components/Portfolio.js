@@ -286,7 +286,7 @@ const Portfolio = () => {
           <div className="space-y-3">
             <h1 className="text-5xl font-bold">
               Trinadh Divvela
-              <span className="block text-cyan-400 mt-2">Product Manager</span>
+              <span className="block text-cyan-400 mt-2">Product Enthusiast</span>
             </h1>
             <p className="text-xl font-semibold text-blue-400">
               IIT Kharagpur | HYD
@@ -387,13 +387,13 @@ const Portfolio = () => {
                 </div>
                 
                 <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-cyan-400 mb-2"> </div>
-                <div className="text-gray-300"> </div>
+                <div className="text-3xl font-bold text-cyan-400 mb-2">20+</div>
+                <div className="text-gray-300">Product Case Studies</div>
                 </div>
-                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                {/*<div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
                 <div className="text-3xl font-bold text-purple-400 mb-2"> </div>
                 <div className="text-gray-300"> </div>
-                </div>
+                </div> */}
             </div>
             </div>
         </div>
