@@ -67,14 +67,14 @@ const Portfolio = () => {
       description: "Product teardown analysis focusing on user experience and retention",
       tags: ["Product Analysis", "UX Research", "User Retention"],
       link: "https://www.canva.com/design/DAFdSav_J_s/nmE95Ebp7cZPIIFiXtmGig/edit?utm_content=DAFdSav_J_s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      image: `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent("Rapido Switching Problem")}`
+      image: "/images/projects/rapido-image.jpeg"
     },
     {
       title: "Disney + Hotstar PRD",
       description: "Comprehensive PRD for increasing user engagement metrics",
       tags: ["Product Strategy", "User Engagement", "PRD"],
       link: "https://docs.google.com/document/d/1yDtXkEadGnA8nEAGgb_pTWskOyb0u6fqU8953Wn3dN8/edit?usp=sharing",
-      image: `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent("Disney + Hotstar PRD")}`
+      image: "/images/projects/disneyhotstar.jpeg"
 
     },
     {
@@ -82,14 +82,14 @@ const Portfolio = () => {
         description: "Detailed Case study of Amazon package recycling.",
         tags: ["Feature Analysis", "Product Design", "UX", "GTM Strategy", "Wireframing"],
         link: "https://docs.google.com/document/d/1j3DEABD1Zg0JcAEsdFKsvfVX8OWipkXjTVRLzyJfxOI/edit?usp=sharing",
-        image: `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent("Amazon Packaging Recycle Case Study")}`
+        image: "/images/projects/amazonpackage.jpeg"
     },
     {
       title: "Whatsapp Status Feature",
       description: "Detailed feature breakdown and improvement analysis",
       tags: ["Feature Analysis", "Product Design", "UX"],
       link: "https://www.canva.com/design/DAFWJJjyQKQ/ScdFI3EfdV9r8uDEivG6WA/edit?utm_content=DAFWJJjyQKQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      image: `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent("Whatsapp Status Feature")}`
+      image: "/images/projects/whatsappimage.jpeg"
     }
   ];
 
