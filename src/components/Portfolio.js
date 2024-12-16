@@ -66,14 +66,14 @@ const Portfolio = () => {
     {
       title: "Rapido Switching Problem",
       description: "Product teardown analysis focusing on user experience and retention",
-      tags: ["Product Analysis", "UX Research", "User Retention"],
+      tags: ["Product Analysis", "UX Research", "User Retention", "Product Teardown"],
       link: "https://www.canva.com/design/DAFdSav_J_s/nmE95Ebp7cZPIIFiXtmGig/edit?utm_content=DAFdSav_J_s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
       image: `${BASE_URL}/images/projects/rapido-image.jpeg`
     },
     {
       title: "Disney + Hotstar PRD",
       description: "Comprehensive PRD for increasing user engagement metrics",
-      tags: ["Product Strategy", "User Engagement", "PRD"],
+      tags: ["Product Strategy", "User Engagement", "PRD", "Key Metrics"],
       link: "https://docs.google.com/document/d/1yDtXkEadGnA8nEAGgb_pTWskOyb0u6fqU8953Wn3dN8/edit?usp=sharing",
       image: `${BASE_URL}/images/projects/disneyhotstar.jpeg`
 
