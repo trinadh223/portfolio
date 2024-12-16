@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X, ChevronRight, ChevronDown, Mail, ExternalLink, ArrowRight, Award, Download } from 'lucide-react';
 import profileImage from '../assets/main-profile-image.jpeg'
 import BlogCarousel from './BlogCarousel';
@@ -137,30 +137,101 @@ const Portfolio = () => {
     window.open('https://docs.google.com/document/d/18CwT9-50cxi2JonkBdxhfdDvbtDwVHSR5KZnj9Cb0ow/edit?usp=sharing', '_blank');
   };
 
+
+  const NavMoreDropdown = ({ active }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
+  
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+          setIsOpen(false);
+        }
+      };
+  
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+  
+    const handleItemClick = (id) => {
+      setIsOpen(false);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+  
+    return (
+      <div 
+        ref={dropdownRef}
+        className="relative"
+      >
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className={`flex items-center gap-1 transition-colors duration-300 ${
+            active ? 'text-cyan-400' : 'text-gray-300 hover:text-cyan-400'
+          }`}
+        >
+          More
+          <ChevronDown size={16} className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        </button>
+        
+        {isOpen && (
+          <div className="absolute left-0 mt-2 w-48 py-2 bg-gray-800/95 backdrop-blur-sm rounded-lg border border-cyan-500/20 shadow-xl z-50">
+            <button 
+              onClick={() => handleItemClick('education')}
+              className="w-full text-left px-4 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-700/50 transition-colors duration-300"
+            >
+              Education
+            </button>
+            <button 
+              onClick={() => handleItemClick('experience')}
+              className="w-full text-left px-4 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-700/50 transition-colors duration-300"
+            >
+              Work Experience
+            </button>
+            <button 
+              onClick={() => handleItemClick('achievements')}
+              className="w-full text-left px-4 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-700/50 transition-colors duration-300"
+            >
+              Achievements
+            </button>
+            <button 
+              onClick={() => handleItemClick('blog')}
+              className="w-full text-left px-4 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-700/50 transition-colors duration-300"
+            >
+              Blogs
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Navbar */}
       <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg z-50 border-b border-cyan-500/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-              Trinadh Divvela
-            </span>
-            
+        <div className="max-w-7xl mx-auto lg:px-0">
+            <div className="flex items-center justify-between h-16">
+                <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text -ml-4">
+                    Trinadh Divvela
+                </span>
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              <NavLink active={activeSection === 'home'} href="#home">Home</NavLink>
-              <NavLink active={activeSection === 'about'} href="#about">About</NavLink>
-              <NavLink active={activeSection === 'projects'} href="#projects">Projects</NavLink>
-              <NavLink active={activeSection === 'skills'} href="#skills">Skills</NavLink>
-              <NavLink active={activeSection === 'contact'} href="#contact">Contact</NavLink>
-              <button 
+            <NavLink active={activeSection === 'home'} href="#home">Home</NavLink>
+            <NavLink active={activeSection === 'about'} href="#about">About</NavLink>
+            <NavLink active={activeSection === 'projects'} href="#projects">Projects</NavLink>
+            <NavLink active={activeSection === 'skills'} href="#skills">Skills</NavLink>
+            <NavMoreDropdown active={['education', 'experience', 'achievements', 'blog'].includes(activeSection)} />
+            <NavLink active={activeSection === 'contact'} href="#contact">Contact</NavLink>
+            <button 
                 onClick={handleDownloadCV}
                 className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center gap-2"
-              >
+            >
                 <Download size={16} />
                 Download CV
-              </button>
+            </button>
             </div>
 
             {/* Mobile menu button */}
@@ -172,33 +243,48 @@ const Portfolio = () => {
           {/* Mobile menu */}
           {isMenuOpen && (
             <div className="md:hidden mt-2 p-4 bg-gray-800/90 backdrop-blur-lg rounded-lg border border-cyan-500/20">
-              <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4">
                 <NavLink active={activeSection === 'home'} href="#home">Home</NavLink>
                 <NavLink active={activeSection === 'about'} href="#about">About</NavLink>
                 <NavLink active={activeSection === 'projects'} href="#projects">Projects</NavLink>
                 <NavLink active={activeSection === 'skills'} href="#skills">Skills</NavLink>
-                <NavLink active={activeSection === 'contact'} href="#contact">Contact</NavLink>
-                <button 
-                  onClick={handleDownloadCV}
-                  className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center gap-2"
-                >
-                  <Download size={16} />
-                  Download CV
-                </button>
-              </div>
+                
+                {/* More Section Items */}
+                <div className="border-t border-gray-700 pt-4">
+                    <p className="text-sm text-gray-400 mb-2 px-2">More</p>
+                    <NavLink active={activeSection === 'education'} href="#education">Education</NavLink>
+                    <NavLink active={activeSection === 'experience'} href="#experience">Experience</NavLink>
+                    <NavLink active={activeSection === 'achievements'} href="#achievements">Achievements</NavLink>
+                    <NavLink active={activeSection === 'blog'} href="#blog">Blog</NavLink>
+                </div>
+
+                <div className="border-t border-gray-700 pt-4">
+                    <NavLink active={activeSection === 'contact'} href="#contact">Contact</NavLink>
+                    <button 
+                    onClick={handleDownloadCV}
+                    className="w-full mt-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2"
+                    >
+                    <Download size={16} />
+                    Download CV
+                    </button>
+                </div>
+                </div>
             </div>
-          )}
+            )}
         </div>
       </nav>
 
       {/* Hero Section */}
       <section id="home" className="pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <div className="space-y-3">
             <h1 className="text-5xl font-bold">
               Trinadh Divvela
               <span className="block text-cyan-400 mt-2">Product Manager</span>
             </h1>
+            <p className="text-xl font-semibold text-blue-400">
+              IIT Kharagpur | HYD
+            </p>
             <p className="text-gray-300 text-lg">
               Passionate about building innovative and user-centric products through data-driven decision making and thoughtful design.
             </p>
