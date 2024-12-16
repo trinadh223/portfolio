@@ -20,7 +20,7 @@
     {
       "src": "main-profile-image.jpeg",
       "type": "image/jpg",
-      "type": "192x192"
+      "sizes": "192x192"
     }
   
   ],
