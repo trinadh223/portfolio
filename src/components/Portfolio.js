@@ -399,50 +399,50 @@ const Portfolio = () => {
         </section>
 
       {/* Education Section */}
-        <section id="education" className="py-20 bg-gray-900/50">
+      <section id="education" className="py-20 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
             Education
-        </h2>
-        <div className="grid grid-cols-3 gap-8">
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Engineering */}
             <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative">
                 <div className="mb-4">
-                <h3 className="text-xl font-bold text-cyan-400">Indian Institute of Technology, Kharagpur</h3>
-                <p className="text-gray-400">B.Tech, Civil Engineering</p>
-                <span className="text-purple-400">2016 - 2020</span>
+                  <h3 className="text-xl font-bold text-cyan-400">Indian Institute of Technology, Kharagpur</h3>
+                  <p className="text-gray-400">B.Tech, Civil Engineering</p>
+                  <span className="text-purple-400">2016 - 2020</span>
                 </div>
-            </div>
+              </div>
             </div>
 
             {/* Intermediate */}
             <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative">
                 <div className="mb-4">
-                <h3 className="text-xl font-bold text-cyan-400">Sri Chaitanya Educational Institutions, Gudavalli</h3>
-                <p className="text-gray-400">Intermediate Education (MPC)</p>
-                <span className="text-purple-400">2014 - 2016</span>
+                  <h3 className="text-xl font-bold text-cyan-400">Sri Chaitanya Educational Institutions, Gudavalli</h3>
+                  <p className="text-gray-400">Intermediate Education (MPC)</p>
+                  <span className="text-purple-400">2014 - 2016</span>
                 </div>
-            </div>
+              </div>
             </div>
 
             {/* Secondary */}
             <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative">
                 <div className="mb-4">
-                <h3 className="text-xl font-bold text-cyan-400">DR. K.K.R's Gowtham Concept School, Tenali</h3>
-                <p className="text-gray-400">Secondary School Education</p>
-                <span className="text-purple-400">2013 - 2014</span>
+                  <h3 className="text-xl font-bold text-cyan-400">DR. K.K.R's Gowtham Concept School, Tenali</h3>
+                  <p className="text-gray-400">Secondary School Education</p>
+                  <span className="text-purple-400">2013 - 2014</span>
                 </div>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
-        </div>
-        </section>
+      </section>
 
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-gray-900/50">
@@ -582,7 +582,11 @@ const Portfolio = () => {
       </section>
      
       {/* Blog Carousel Section */}
-      <BlogCarousel />
+      <section id="blog" className="py-20 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto px-4">
+          <BlogCarousel />
+        </div>
+      </section>
 
       {/* Contact section */}
       <section id="contact" className="py-20 bg-gray-900/50">
