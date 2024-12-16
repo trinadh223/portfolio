@@ -112,7 +112,7 @@ const Portfolio = () => {
 
   const achievements = [
     {
-      title: "Academic Acheivements",
+      title: "Academic Achievements",
       items: [
         "Ranked among the top 1% of all students in JEE Advanced 2016",
         "Ranked among the top 0.3% of a million students in JEE Mains Paper-1 in 2016",
@@ -132,12 +132,13 @@ const Portfolio = () => {
     }
   ];
 
+  {/* Download CV functionality */}
   const handleDownloadCV = () => {
     // Replace with your actual CV link
     window.open('https://docs.google.com/document/d/18CwT9-50cxi2JonkBdxhfdDvbtDwVHSR5KZnj9Cb0ow/edit?usp=sharing', '_blank');
   };
 
-
+  {/* Navbar More Dropdown functionality */}
   const NavMoreDropdown = ({ active }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
@@ -208,6 +209,7 @@ const Portfolio = () => {
     );
   };
 
+  
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Navbar */}
@@ -550,7 +552,7 @@ const Portfolio = () => {
       <section id="achievements" className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-            Achievements & Recognition
+            Achievements
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {achievements.map((category, index) => (
@@ -720,6 +722,7 @@ const Portfolio = () => {
       </button>
     </div>
   );
+
 };
 
 // Utility component for navigation links
