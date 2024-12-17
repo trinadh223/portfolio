@@ -212,523 +212,586 @@ const Portfolio = () => {
 
   
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {/* Navbar */}
-        <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg z-50 border-b border-cyan-500/20">
-        <div className="max-w-7xl mx-auto lg:px-0">
-            <div className="flex items-center justify-between h-16 px-4">
-            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text ml-0 sm:-ml-4">
-                Trinadh Divvela
-            </span>
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-            <NavLink active={activeSection === 'home'} href="#home">Home</NavLink>
-            <NavLink active={activeSection === 'about'} href="#about">About</NavLink>
-            <NavLink active={activeSection === 'projects'} href="#projects">Projects</NavLink>
-            <NavLink active={activeSection === 'skills'} href="#skills">Skills</NavLink>
-            <NavMoreDropdown active={['education', 'experience', 'achievements', 'blog'].includes(activeSection)} />
-            <NavLink active={activeSection === 'contact'} href="#contact">Contact</NavLink>
-            <button 
-                onClick={handleDownloadCV}
-                className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center gap-2"
-            >
-                <Download size={16} />
-                Download CV
-            </button>
-            </div>
-
-            {/* Mobile menu button */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden">
-              {isMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-
-          {/* Mobile menu */}
-          {isMenuOpen && (
-            <div className="md:hidden mt-2 p-4 bg-gray-800/90 backdrop-blur-lg rounded-lg border border-cyan-500/20">
-                <div className="flex flex-col gap-4">
+    <div className="min-h-screen bg-gray-900 text-white relative">
+      <div className="fixed inset-0" style={{ zIndex: 0 }}>
+        <svg width="100%" height="100%" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="triangleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#6366f1', stopOpacity: 0.03 }} />
+              <stop offset="50%" style={{ stopColor: '#2563eb', stopOpacity: 0.03 }} />
+              <stop offset="100%" style={{ stopColor: '#06b6d4', stopOpacity: 0.03 }} />
+            </linearGradient>
+          </defs>
+          <pattern id="trianglePattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path 
+              d="M30 0 L60 52 L0 52 Z" 
+              fill="url(#triangleGradient)"
+              stroke="currentColor" 
+              strokeWidth="0.3"
+              className="text-cyan-500/5"
+            />
+          </pattern>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#trianglePattern)" />
+        </svg>
+      </div>
+      <div className="relative z-10">
+      <div className="min-h-screen bg-gray-900 text-white">
+          {/* Navbar */}
+            <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg z-50 border-b border-cyan-500/20">
+            <div className="max-w-7xl mx-auto lg:px-0">
+                <div className="flex items-center justify-between h-16 px-4">
+                <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text ml-0 sm:-ml-4">
+                    Trinadh Divvela
+                </span>
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex items-center gap-8">
                 <NavLink active={activeSection === 'home'} href="#home">Home</NavLink>
                 <NavLink active={activeSection === 'about'} href="#about">About</NavLink>
                 <NavLink active={activeSection === 'projects'} href="#projects">Projects</NavLink>
                 <NavLink active={activeSection === 'skills'} href="#skills">Skills</NavLink>
-                
-                {/* More Section for Mobile */}
-                <div className="border-t border-gray-700 pt-4">
-                    <p className="text-sm text-gray-400 mb-3 px-2">More</p>
-                    <div className="flex flex-col gap-3">
-                    <NavLink active={activeSection === 'education'} href="#education" className="block">Education</NavLink>
-                    <NavLink active={activeSection === 'experience'} href="#experience" className="block">Experience</NavLink>
-                    <NavLink active={activeSection === 'achievements'} href="#achievements" className="block">Achievements</NavLink>
-                    <NavLink active={activeSection === 'blog'} href="#blog" className="block">Blog</NavLink>
-                    </div>
-                </div>
-
-                <div className="border-t border-gray-700 pt-4">
-                    <NavLink active={activeSection === 'contact'} href="#contact">Contact</NavLink>
-                </div>
-                
+                <NavMoreDropdown active={['education', 'experience', 'achievements', 'blog'].includes(activeSection)} />
+                <NavLink active={activeSection === 'contact'} href="#contact">Contact</NavLink>
                 <button 
                     onClick={handleDownloadCV}
-                    className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2"
+                    className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center gap-2"
                 >
                     <Download size={16} />
                     Download CV
                 </button>
                 </div>
-            </div>
-            )}
-        </div>
-      </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="pt-32 pb-20 px-4">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-3">
-            <h1 className="text-5xl font-bold">
-              Trinadh Divvela
-              <span className="block text-cyan-400 mt-2">Product Enthusiast</span>
-            </h1>
-            <p className="text-xl font-semibold text-blue-400">
-              IIT Kharagpur | HYD
-            </p>
-            <p className="text-gray-300 text-lg">
-              Passionate about building innovative and user-centric products through data-driven decision making and thoughtful design.
-            </p>
-            <div className="flex gap-4">
-              <button 
-                onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center gap-2">
-                View Projects <ChevronDown size={20} />
-              </button>
-              <button 
-                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                className="px-6 py-3 border border-cyan-500/50 rounded-lg hover:bg-cyan-500/10 transition-colors duration-300 flex items-center gap-2">
-                Contact Me
-              </button>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <img 
-              src={profileImage}
-              alt="Profile" 
-              className="relative rounded-full w-full max-w-md mx-auto border-2 border-cyan-500/50"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* About Me Section */}
-        <section id="about" className="py-20 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-            About Me
-            </h2>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
-            <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-cyan-400">
-                Summary
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                Senior Technical Manager at ICICI Bank with a passion for building innovative digital products. I combine my technical expertise with strong product sense to deliver exceptional user experiences.
-                </p>
-                <p className="text-gray-300 leading-relaxed">
-                My journey includes leading cross-functional teams, executing large-scale digital transformations, and driving significant improvements in user engagement and conversion rates.
-                </p>
-                <div className="grid grid-cols-2 gap-4 pt-4">
-                {/*<div className="space-y-2">
-                    <h4 className="text-xl font-semibold text-cyan-400">Product Focus</h4>
-                    <ul className="space-y-2">
-                    <li className="flex items-center space-x-2">
-                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
-                        <span className="text-gray-300">User-Centric Design</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
-                        <span className="text-gray-300">Data-Driven Decisions</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
-                        <span className="text-gray-300">Strategic Planning</span>
-                    </li>
-                    </ul>
-                </div> */}
-                {/*
-                <div className="space-y-2">
-                    <h4 className="text-xl font-semibold text-cyan-400">Tech Stack</h4>
-                    <ul className="space-y-2">
-                    <li className="flex items-center space-x-2">
-                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
-                        <span className="text-gray-300">Adobe Experience Manager</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
-                        <span className="text-gray-300">Adobe Analytics</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                        <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
-                        <span className="text-gray-300">Adobe Target</span>
-                    </li>
-                    </ul>
-                </div> */}
-                </div>
-            </div>
-            
-            {/* Stats/Highlights */}
-            <div className="grid grid-cols-2 gap-6">
-                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-cyan-400 mb-2">4+</div>
-                <div className="text-gray-300">Years of Work Experience</div>
-                </div>
-                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-purple-400 mb-2">2+</div>
-                <div className="text-gray-300">Years of Product Experience</div>
-                </div>
-                
-                <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-cyan-400 mb-2">20+</div>
-                <div className="text-gray-300">Product Case Studies</div>
-                </div>
-                {/*<div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold text-purple-400 mb-2"> </div>
-                <div className="text-gray-300"> </div>
-                </div> */}
-            </div>
-            </div>
-        </div>
-        </section>
-
-      {/* Education Section */}
-      <section id="education" className="py-20 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-            Education
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Engineering */}
-            <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-cyan-400">Indian Institute of Technology, Kharagpur</h3>
-                  <p className="text-gray-400">B.Tech, Civil Engineering</p>
-                  <span className="text-purple-400">2016 - 2020</span>
-                </div>
+                {/* Mobile menu button */}
+                <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden">
+                  {isMenuOpen ? <X /> : <Menu />}
+                </button>
               </div>
-            </div>
 
-            {/* Intermediate */}
-            <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-cyan-400">Sri Chaitanya Educational Institutions, Gudavalli</h3>
-                  <p className="text-gray-400">Intermediate Education (MPC)</p>
-                  <span className="text-purple-400">2014 - 2016</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Secondary */}
-            <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-cyan-400">DR. K.K.R's Gowtham Concept School, Tenali</h3>
-                  <p className="text-gray-400">Secondary School Education</p>
-                  <span className="text-purple-400">2013 - 2014</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-            Work Experience
-          </h2>
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div 
-                key={index}
-                className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative">
-                  <div className="flex flex-wrap justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-cyan-400">{exp.role}</h3>
-                      <p className="text-gray-400">{exp.company} · {exp.location}</p>
+              {/* Mobile menu */}
+              {isMenuOpen && (
+                <div className="md:hidden mt-2 p-4 bg-gray-800/90 backdrop-blur-lg rounded-lg border border-cyan-500/20">
+                    <div className="flex flex-col gap-4">
+                    <NavLink active={activeSection === 'home'} href="#home">Home</NavLink>
+                    <NavLink active={activeSection === 'about'} href="#about">About</NavLink>
+                    <NavLink active={activeSection === 'projects'} href="#projects">Projects</NavLink>
+                    <NavLink active={activeSection === 'skills'} href="#skills">Skills</NavLink>
+                    
+                    {/* More Section for Mobile */}
+                    <div className="border-t border-gray-700 pt-4">
+                        <p className="text-sm text-gray-400 mb-3 px-2">More</p>
+                        <div className="flex flex-col gap-3">
+                        <NavLink active={activeSection === 'education'} href="#education" className="block">Education</NavLink>
+                        <NavLink active={activeSection === 'experience'} href="#experience" className="block">Experience</NavLink>
+                        <NavLink active={activeSection === 'achievements'} href="#achievements" className="block">Achievements</NavLink>
+                        <NavLink active={activeSection === 'blog'} href="#blog" className="block">Blog</NavLink>
+                        </div>
                     </div>
-                    <span className="text-purple-400">{exp.period}</span>
-                  </div>
-                  <ul className="space-y-2">
-                    {exp.points.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <ChevronRight size={20} className="text-cyan-400 flex-shrink-0 mt-1" />
-                        <span className="text-gray-300">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-            Featured Projects
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <a 
-                href={project.link}
-                key={index}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-gray-800/50 rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300"
-            >
-                <div className="h-48 bg-gray-700/50 relative overflow-hidden">
-                <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <ExternalLink className="absolute top-4 right-4 text-cyan-400 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-cyan-400 mb-2">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, idx) => (
-                      <span 
-                        key={idx}
-                        className="px-3 py-1 text-sm bg-cyan-500/10 text-cyan-400 rounded-full border border-cyan-500/20"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-            Skills & Expertise
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {skills.map((skill, index) => (
-              <div 
-                key={index}
-                className="bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300"
-              >
-                <h3 className="text-xl font-bold text-cyan-400 mb-4">{skill.category}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {skill.items.map((item, idx) => (
-                    <span 
-                      key={idx}
-                      className="px-3 py-1 text-sm bg-cyan-500/10 text-cyan-400 rounded-full border border-cyan-500/20"
+                    <div className="border-t border-gray-700 pt-4">
+                        <NavLink active={activeSection === 'contact'} href="#contact">Contact</NavLink>
+                    </div>
+                    
+                    <button 
+                        onClick={handleDownloadCV}
+                        className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2"
                     >
-                      {item}
-                    </span>
-                  ))}
+                        <Download size={16} />
+                        Download CV
+                    </button>
+                    </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section id="achievements" className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-            Achievements
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {achievements.map((category, index) => (
-              <div 
-                key={index}
-                className="group bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Award className="text-cyan-400" size={24} />
-                  <h3 className="text-xl font-bold text-cyan-400">{category.title}</h3>
-                </div>
-                <ul className="space-y-3">
-                  {category.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <ChevronRight size={18} className="text-cyan-400 flex-shrink-0 mt-1" />
-                      <span className="text-gray-300 text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-     
-      {/* Blog Carousel Section */}
-      <section id="blog" className="py-20 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <BlogCarousel />
-        </div>
-      </section>
-
-      {/* Contact section */}
-      <section id="contact" className="py-20 bg-gray-900/50">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-blue-400">
-            Let's Connect
-          </h2>
-          
-          {/* Main Contact Grid - center-aligned */}
-          <div className="grid md:grid-cols-3 gap-8 mb-24">
-            {/* Primary Contact */}
-            <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4 text-center">
-              <h3 className="text-lg text-cyan-400">Primary Contact</h3>
-              <div className="space-y-3 flex flex-col items-center">
-                <a 
-                  href="mailto:trinadh.divvela@gmail.com" 
-                  className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-                >
-                  <Mail size={18} />
-                  <span>Email</span>
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/trinadhdivvela" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-                >
-                  <Linkedin size={18} />
-                  <span>LinkedIn</span>
-                </a>
-              </div>
+                )}
             </div>
+          </nav>
 
-            {/* Social Links */}
-            <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4 text-center">
-              <h3 className="text-lg text-purple-400">Social Links</h3>
-              <div className="space-y-3 flex flex-col items-center">
-                <a 
-                  href="https://x.com/trinadh_divvela" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
-                >
-                  <Twitter size={18} />
-                  <span>Twitter / X</span>
-                </a>
-                <a 
-                  href="https://instagram.com/trinadh_223" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
-                >
-                  <Instagram size={18} />
-                  <span>Instagram</span>
-                </a>
-                <a 
-                  href="https://facebook.com/trinadhdivvela" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
-                >
-                  <Facebook size={18} />
-                  <span>Facebook</span>
-                </a>
-              </div>
+          {/* Hero Section */}
+          <section id="home" className="relative min-h-[90vh] pt-32 pb-20 px-4 flex items-center justify-center overflow-hidden">
+            <div className="absolute inset-0" style={{ zIndex: 1 }}>
+              {/* Gradient Orbs */}
+              <div 
+                className="absolute top-20 left-[20%] w-[500px] h-[500px] rounded-full"
+                style={{
+                  background: 'radial-gradient(circle, rgba(34,211,238,0.08) 0%, rgba(34,211,238,0) 70%)',
+                  animation: 'float 10s ease-in-out infinite'
+                }}
+              />
+              <div 
+                className="absolute bottom-20 right-[20%] w-[400px] h-[400px] rounded-full"
+                style={{
+                  background: 'radial-gradient(circle, rgba(168,85,247,0.08) 0%, rgba(168,85,247,0) 70%)',
+                  animation: 'float 8s ease-in-out infinite reverse'
+                }}
+              />
+
+              {/* Floating Lines */}
+              <div 
+                className="absolute top-[20%] right-[10%] w-[200px] h-[2px]"
+                style={{
+                  background: 'linear-gradient(90deg, rgba(34,211,238,0) 0%, rgba(34,211,238,0.2) 50%, rgba(34,211,238,0) 100%)',
+                  animation: 'float 7s ease-in-out infinite',
+                  transform: 'rotate(-45deg)'
+                }}
+              />
+              <div 
+                className="absolute bottom-[20%] left-[10%] w-[200px] h-[2px]"
+                style={{
+                  background: 'linear-gradient(90deg, rgba(168,85,247,0) 0%, rgba(168,85,247,0.2) 50%, rgba(168,85,247,0) 100%)',
+                  animation: 'float 9s ease-in-out infinite',
+                  transform: 'rotate(45deg)'
+                }}
+              />
             </div>
 
             {/* Content */}
-            <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4 text-center">
-              <h3 className="text-lg text-cyan-400">Content</h3>
-              <div className="space-y-3 flex flex-col items-center">
-                <a 
-                  href="https://medium.com/@trinadhdivvela" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-                >
-                  <ExternalLink size={18} />
-                  <span>Medium</span>
-                </a>
-                <a 
-                  href="https://github.com/trinadh223" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-                >
-                  <Github size={18} />
-                  <span>GitHub</span>
-                </a>
+            <div className="relative z-10 max-w-4xl mx-auto text-center">
+              <div className="space-y-6">
+                {/* Main Title */}
+                <h1 className="text-2xl md:text-3xl text-gray-300">
+                  Hi, I am <span className="font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 text-transparent bg-clip-text">Trinadh Divvela</span> a Product Manager
+                </h1>
+
+                {/* Subtitle */}
+                <p className="text-xl font-semibold text-blue-400">
+                  IIT Kharagpur | Hyderabad
+                </p>
+
+                {/* Description */}
+                <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+                  Passionate about building innovative and user-centric products through data-driven decision making and thoughtful design.
+                </p>
+
+                {/* Action buttons */}
+                <div className="flex gap-6 justify-center mt-8">
+                  <button 
+                    onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
+                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 flex items-center gap-2"
+                  >
+                    See My Work
+                    <ChevronDown size={16} />
+                  </button>
+                  <button 
+                    onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                    className="px-8 py-4 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 transition-all duration-300 hover:border-cyan-500 flex items-center gap-2"
+                  >
+                    Contact Me <Mail size={20} />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* Schedule Meeting Section */}
-          <div className="max-w-md mx-auto text-center border-t border-gray-800 pt-16">
-            <div className="space-y-6">
-              <h3 className="text-xl text-pink-400 flex items-center gap-2 justify-center">
-                <Mail size={20} />
-                Schedule a Meeting
-              </h3>
-              <p className="text-gray-300">Book a slot for a quick chat or discussion</p>
-              <a 
-                href="https://calendly.com/trinadh08/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 text-pink-400 border border-pink-400/30 rounded-lg hover:bg-pink-400/10 transition-all duration-300"
-              >
-                Book a Slot
-              </a>
+          {/* About Me Section */}
+            <section id="about" className="py-20 bg-gray-900/50">
+            <div className="max-w-7xl mx-auto px-4">
+                <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
+                About Me
+                </h2>
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Text Content */}
+                <div className="space-y-6">
+                    <h3 className="text-2xl font-bold text-cyan-400">
+                    Summary
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                    Senior Technical Manager at ICICI Bank with a passion for building innovative digital products. I combine my technical expertise with strong product sense to deliver exceptional user experiences.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed">
+                    My journey includes leading cross-functional teams, executing large-scale digital transformations, and driving significant improvements in user engagement and conversion rates.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 pt-4">
+                    {/*<div className="space-y-2">
+                        <h4 className="text-xl font-semibold text-cyan-400">Product Focus</h4>
+                        <ul className="space-y-2">
+                        <li className="flex items-center space-x-2">
+                            <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                            <span className="text-gray-300">User-Centric Design</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                            <span className="text-gray-300">Data-Driven Decisions</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                            <span className="text-gray-300">Strategic Planning</span>
+                        </li>
+                        </ul>
+                    </div> */}
+                    {/*
+                    <div className="space-y-2">
+                        <h4 className="text-xl font-semibold text-cyan-400">Tech Stack</h4>
+                        <ul className="space-y-2">
+                        <li className="flex items-center space-x-2">
+                            <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                            <span className="text-gray-300">Adobe Experience Manager</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                            <span className="text-gray-300">Adobe Analytics</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <ChevronRight className="text-cyan-400 flex-shrink-0" size={16} />
+                            <span className="text-gray-300">Adobe Target</span>
+                        </li>
+                        </ul>
+                    </div> */}
+                    </div>
+                </div>
+                
+                {/* Stats/Highlights */}
+                <div className="grid grid-cols-2 gap-6">
+                    <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-cyan-400 mb-2">4+</div>
+                    <div className="text-gray-300">Years of Work Experience</div>
+                    </div>
+                    <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-purple-400 mb-2">2+</div>
+                    <div className="text-gray-300">Years of Product Experience</div>
+                    </div>
+                    
+                    <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-cyan-400 mb-2">20+</div>
+                    <div className="text-gray-300">Product Case Studies</div>
+                    </div>
+                    {/*<div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
+                    <div className="text-3xl font-bold text-purple-400 mb-2"> </div>
+                    <div className="text-gray-300"> </div>
+                    </div> */}
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
-      {/* Download CV Section */}
-      <section className="py-12 bg-gradient-to-r from-cyan-900/20 to-purple-900/20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col items-center justify-center text-center">
-            <h2 className="text-2xl font-bold text-cyan-400 mb-4"></h2>
-            <p className="text-gray-300 mb-6">Download my CV for a complete overview of my experience and skills</p>
-            <button 
-              onClick={handleDownloadCV}
-              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-cyan-500/25"
-            >
-              <Download size={20} />
-              Download CV
-            </button>
-          </div>
-        </div>
-      </section>
+          {/* Education Section */}
+          <section id="education" className="py-20 bg-gray-900/50">
+            <div className="max-w-7xl mx-auto px-4">
+              <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
+                Education
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Engineering */}
+                <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-cyan-400">Indian Institute of Technology, Kharagpur</h3>
+                      <p className="text-gray-400">B.Tech, Civil Engineering</p>
+                      <span className="text-purple-400">2016 - 2020</span>
+                    </div>
+                  </div>
+                </div>
 
-      {/* Floating Download Button */}
-      <button 
-        onClick={handleDownloadCV}
-        className="fixed bottom-8 right-8 px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-cyan-500/25 z-50"
-      >
-        <Download size={20} />
-        <span className="hidden md:inline">Download CV</span>
-      </button>
+                {/* Intermediate */}
+                <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-cyan-400">Sri Chaitanya Educational Institutions, Gudavalli</h3>
+                      <p className="text-gray-400">Intermediate Education (MPC)</p>
+                      <span className="text-purple-400">2014 - 2016</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Secondary */}
+                <div className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300 text-center">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-cyan-400">DR. K.K.R's Gowtham Concept School, Tenali</h3>
+                      <p className="text-gray-400">Secondary School Education</p>
+                      <span className="text-purple-400">2013 - 2014</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Experience Section */}
+          <section id="experience" className="py-20 bg-gray-900/50">
+            <div className="max-w-7xl mx-auto px-4">
+              <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
+                Work Experience
+              </h2>
+              <div className="space-y-8">
+                {experiences.map((exp, index) => (
+                  <div 
+                    key={index}
+                    className="group relative bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative">
+                      <div className="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                          <h3 className="text-xl font-bold text-cyan-400">{exp.role}</h3>
+                          <p className="text-gray-400">{exp.company} · {exp.location}</p>
+                        </div>
+                        <span className="text-purple-400">{exp.period}</span>
+                      </div>
+                      <ul className="space-y-2">
+                        {exp.points.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <ChevronRight size={20} className="text-cyan-400 flex-shrink-0 mt-1" />
+                            <span className="text-gray-300">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section id="projects" className="py-20">
+            <div className="max-w-7xl mx-auto px-4">
+              <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
+                Featured Projects
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <a 
+                    href={project.link}
+                    key={index}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-gray-800/50 rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300"
+                >
+                    <div className="h-48 bg-gray-700/50 relative overflow-hidden">
+                    <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <ExternalLink className="absolute top-4 right-4 text-cyan-400 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-cyan-400 mb-2">{project.title}</h3>
+                      <p className="text-gray-300 mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, idx) => (
+                          <span 
+                            key={idx}
+                            className="px-3 py-1 text-sm bg-cyan-500/10 text-cyan-400 rounded-full border border-cyan-500/20"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Skills Section */}
+          <section id="skills" className="py-20 bg-gray-900/50">
+            <div className="max-w-7xl mx-auto px-4">
+              <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
+                Skills & Expertise
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8">
+                {skills.map((skill, index) => (
+                  <div 
+                    key={index}
+                    className="bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-colors duration-300"
+                  >
+                    <h3 className="text-xl font-bold text-cyan-400 mb-4">{skill.category}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {skill.items.map((item, idx) => (
+                        <span 
+                          key={idx}
+                          className="px-3 py-1 text-sm bg-cyan-500/10 text-cyan-400 rounded-full border border-cyan-500/20"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Achievements Section */}
+          <section id="achievements" className="py-20">
+            <div className="max-w-7xl mx-auto px-4">
+              <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
+                Achievements
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                {achievements.map((category, index) => (
+                  <div 
+                    key={index}
+                    className="group bg-gray-800/50 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <Award className="text-cyan-400" size={24} />
+                      <h3 className="text-xl font-bold text-cyan-400">{category.title}</h3>
+                    </div>
+                    <ul className="space-y-3">
+                      {category.items.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <ChevronRight size={18} className="text-cyan-400 flex-shrink-0 mt-1" />
+                          <span className="text-gray-300 text-sm">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        
+          {/* Blog Carousel Section */}
+          <section id="blog" className="py-20 bg-gray-900/50">
+            <div className="max-w-7xl mx-auto px-4">
+              <BlogCarousel />
+            </div>
+          </section>
+
+          {/* Contact section */}
+          <section id="contact" className="py-20 bg-gray-900/50">
+            <div className="max-w-5xl mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center mb-16 text-blue-400">
+                Let's Connect
+              </h2>
+              
+              {/* Main Contact Grid - center-aligned */}
+              <div className="grid md:grid-cols-3 gap-8 mb-24">
+                {/* Primary Contact */}
+                <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4 text-center">
+                  <h3 className="text-lg text-cyan-400">Primary Contact</h3>
+                  <div className="space-y-3 flex flex-col items-center">
+                    <a 
+                      href="mailto:trinadh.divvela@gmail.com" 
+                      className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      <Mail size={18} />
+                      <span>Email</span>
+                    </a>
+                    <a 
+                      href="https://www.linkedin.com/in/trinadhdivvela" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      <Linkedin size={18} />
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Social Links */}
+                <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4 text-center">
+                  <h3 className="text-lg text-purple-400">Social Links</h3>
+                  <div className="space-y-3 flex flex-col items-center">
+                    <a 
+                      href="https://x.com/trinadh_divvela" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                    >
+                      <Twitter size={18} />
+                      <span>Twitter / X</span>
+                    </a>
+                    <a 
+                      href="https://instagram.com/trinadh_223" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                    >
+                      <Instagram size={18} />
+                      <span>Instagram</span>
+                    </a>
+                    <a 
+                      href="https://facebook.com/trinadhdivvela" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                    >
+                      <Facebook size={18} />
+                      <span>Facebook</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="px-6 py-4 bg-gray-800/20 backdrop-blur-sm rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] space-y-4 text-center">
+                  <h3 className="text-lg text-cyan-400">Content</h3>
+                  <div className="space-y-3 flex flex-col items-center">
+                    <a 
+                      href="https://medium.com/@trinadhdivvela" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      <ExternalLink size={18} />
+                      <span>Medium</span>
+                    </a>
+                    <a 
+                      href="https://github.com/trinadh223" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      <Github size={18} />
+                      <span>GitHub</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Schedule Meeting Section */}
+              <div className="max-w-md mx-auto text-center border-t border-gray-800 pt-16">
+                <div className="space-y-6">
+                  <h3 className="text-xl text-pink-400 flex items-center gap-2 justify-center">
+                    <Mail size={20} />
+                    Schedule a Meeting
+                  </h3>
+                  <p className="text-gray-300">Book a slot for a quick chat or discussion</p>
+                  <a 
+                    href="https://calendly.com/trinadh08/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-6 py-3 text-pink-400 border border-pink-400/30 rounded-lg hover:bg-pink-400/10 transition-all duration-300"
+                  >
+                    Book a Slot
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Download CV Section */}
+          <section className="py-12 bg-gradient-to-r from-cyan-900/20 to-purple-900/20">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="flex flex-col items-center justify-center text-center">
+                <h2 className="text-2xl font-bold text-cyan-400 mb-4"></h2>
+                <p className="text-gray-300 mb-6">Download my CV for a complete overview of my experience and skills</p>
+                <button 
+                  onClick={handleDownloadCV}
+                  className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-cyan-500/25"
+                >
+                  <Download size={20} />
+                  Download CV
+                </button>
+              </div>
+            </div>
+          </section>
+
+          {/* Floating Download Button */}
+          <button 
+            onClick={handleDownloadCV}
+            className="fixed bottom-8 right-8 px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-cyan-500/25 z-50"
+          >
+            <Download size={20} />
+            <span className="hidden md:inline">Download CV</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 
