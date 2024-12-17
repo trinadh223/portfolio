@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronRight, ExternalLink } from 'lucide-react';
 
 const BlogCarousel = () => {
-  const [blogPosts, setBlogPosts] = useState([]); // Initialize with empty array
+  const [blogPosts, setBlogPosts] = useState([]); 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoScroll, setAutoScroll] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -20,16 +20,26 @@ const BlogCarousel = () => {
         const data = await response.json();
         
         if (data.status === 'ok' && data.items) {
-          const posts = data.items.map(item => ({
-            title: item.title,
-            excerpt: item.description
-              .replace(/<[^>]*>/g, '')
-              .split('.')[0] + '.',
-            image: item.thumbnail || `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent(item.title)}`,
-            link: item.link,
-            pubDate: new Date(item.pubDate).toLocaleDateString(),
-            tags: item.categories || []
-          }));
+          const posts = data.items.map(item => {
+            // Extract img src
+            const imgSrcMatch = item.description.match(/<img[^>]+src=["']?([^"'>]+)["']?/i);
+            const extractedImageSrc = imgSrcMatch ? imgSrcMatch[1] : null;
+            
+            // Logging
+            console.log("Extracted Image Source:", extractedImageSrc);
+
+            return {
+              title: item.title,
+              excerpt: item.description
+                .replace(/<[^>]*>/g, '')
+                .split('.')[0] + '.',
+              image: extractedImageSrc || item.thumbnail || `https://placehold.co/600x400/1a1a1a/666666?text=${encodeURIComponent(item.title)}`,
+              link: item.link,
+              pubDate: new Date(item.pubDate).toLocaleDateString(),
+              tags: item.categories || []
+            };
+          });
+          
           setBlogPosts(posts);
         } else {
           setError('Failed to fetch blog posts');
