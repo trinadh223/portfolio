@@ -349,10 +349,10 @@ const Portfolio = () => {
                   Hi, I am <span className="font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 text-transparent bg-clip-text">Trinadh Divvela</span> a Product Manager
                 </h1>
 
-                {/* Subtitle */}
+                {/* Subtitle 
                 <p className="text-xl font-semibold text-blue-400">
                   IIT Kharagpur | Hyderabad
-                </p>
+                </p> */}
 
                 {/* Description */}
                 <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
