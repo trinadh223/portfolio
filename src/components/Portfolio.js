@@ -362,11 +362,10 @@ const Portfolio = () => {
                 {/* Action buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                   <button 
-                    onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
                     className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 flex items-center justify-center gap-2 w-full sm:w-auto"
                   >
                     See My Work
-                    <ChevronDown size={16} />
                   </button>
                   <button 
                     onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
@@ -376,6 +375,10 @@ const Portfolio = () => {
                   </button>
                 </div>
               </div>
+            </div>
+            {/* Scroll indicator */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+              <ChevronDown size={24} className="text-cyan-400" />
             </div>
           </section>
 
