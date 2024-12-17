@@ -1,15 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Menu, X, ChevronRight, ChevronDown, Mail, ExternalLink, ArrowRight, Award, Download } from 'lucide-react';
-import profileImage from '../assets/main-profile-image.jpeg'
+import { Menu, X, ChevronRight, ChevronDown, Mail, ExternalLink, Award, Download } from 'lucide-react';
 import BlogCarousel from './BlogCarousel';
 import { Linkedin, Twitter, Instagram, Facebook, Github } from 'lucide-react';
-
-const BASE_URL = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection] = useState('home');
   
   
   const experiences = [
@@ -772,7 +769,6 @@ const Portfolio = () => {
           <section className="py-12 bg-gradient-to-r from-cyan-900/20 to-purple-900/20">
             <div className="max-w-7xl mx-auto px-4">
               <div className="flex flex-col items-center justify-center text-center">
-                <h2 className="text-2xl font-bold text-cyan-400 mb-4"></h2>
                 <p className="text-gray-300 mb-6">Download my CV for a complete overview of my experience and skills</p>
                 <button 
                   onClick={handleDownloadCV}
