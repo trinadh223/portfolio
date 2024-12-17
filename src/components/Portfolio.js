@@ -360,17 +360,17 @@ const Portfolio = () => {
                 </p>
 
                 {/* Action buttons */}
-                <div className="flex gap-6 justify-center mt-8">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                   <button 
                     onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
-                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 flex items-center gap-2"
+                    className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 flex items-center justify-center gap-2 w-full sm:w-auto"
                   >
                     See My Work
                     <ChevronDown size={16} />
                   </button>
                   <button 
                     onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                    className="px-8 py-4 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 transition-all duration-300 hover:border-cyan-500 flex items-center gap-2"
+                    className="px-6 py-3 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 transition-all duration-300 hover:border-cyan-500 flex items-center justify-center gap-2 w-full sm:w-auto"
                   >
                     Contact Me <Mail size={20} />
                   </button>
