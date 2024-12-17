@@ -279,7 +279,7 @@ const Portfolio = () => {
                         <NavLink active={activeSection === 'education'} href="#education" className="block">Education</NavLink>
                         <NavLink active={activeSection === 'experience'} href="#experience" className="block">Experience</NavLink>
                         <NavLink active={activeSection === 'achievements'} href="#achievements" className="block">Achievements</NavLink>
-                        <NavLink active={activeSection === 'blog'} href="#blog" className="block">Blog</NavLink>
+                        <NavLink active={activeSection === 'blog'} href="#blog" className="block">Blogs</NavLink>
                         </div>
                     </div>
 
@@ -443,7 +443,7 @@ const Portfolio = () => {
                     <div className="text-gray-300">Years of Work Experience</div>
                     </div>
                     <div className="p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-                    <div className="text-3xl font-bold text-purple-400 mb-2">2+</div>
+                    <div className="text-3xl font-bold text-purple-400 mb-2">2.5+</div>
                     <div className="text-gray-300">Years of Product Experience</div>
                     </div>
                     
@@ -546,7 +546,7 @@ const Portfolio = () => {
           <section id="projects" className="py-20">
             <div className="max-w-7xl mx-auto px-4">
               <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-                Featured Projects
+                My Projects
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
@@ -590,7 +590,7 @@ const Portfolio = () => {
           <section id="skills" className="py-20 bg-gray-900/50">
             <div className="max-w-7xl mx-auto px-4">
               <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
-                Skills & Expertise
+                Skills
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {skills.map((skill, index) => (
@@ -656,7 +656,7 @@ const Portfolio = () => {
           <section id="contact" className="py-20 bg-gray-900/50">
             <div className="max-w-5xl mx-auto px-4">
               <h2 className="text-4xl font-bold text-center mb-16 text-blue-400">
-                Let's Connect
+                Connect with me
               </h2>
               
               {/* Main Contact Grid - center-aligned */}
