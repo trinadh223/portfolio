@@ -133,7 +133,7 @@ const Portfolio = () => {
   {/* Download CV functionality */}
   const handleDownloadCV = () => {
     // Replace with your actual CV link
-    window.open('https://docs.google.com/document/d/18CwT9-50cxi2JonkBdxhfdDvbtDwVHSR5KZnj9Cb0ow/edit?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/1oy1Qx9SP7UByW61YflQ4-Y8wb9PZWsqe/view?usp=sharing', '_blank');
   };
 
   {/* Navbar More Dropdown functionality */}
