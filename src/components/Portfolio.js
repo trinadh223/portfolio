@@ -527,14 +527,14 @@ const Portfolio = () => {
                         </div>
                         <span className="text-purple-400">{exp.period}</span>
                       </div>
-                      <ul className="space-y-2">
+                      {/*<ul className="space-y-2">
                         {exp.points.map((point, idx) => (
                           <li key={idx} className="flex items-start gap-2">
                             <ChevronRight size={20} className="text-cyan-400 flex-shrink-0 mt-1" />
                             <span className="text-gray-300">{point}</span>
                           </li>
                         ))}
-                      </ul>
+                      </ul> */}
                     </div>
                   </div>
                 ))}
