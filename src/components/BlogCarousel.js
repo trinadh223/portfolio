@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronRight, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 
 const BlogCarousel = () => {
   const [blogPosts, setBlogPosts] = useState([]); 
@@ -118,22 +118,29 @@ const BlogCarousel = () => {
     return null;
   }
 
+  // Calculate which posts to display based on the current slide index
+  const visiblePosts = [];
+  const maxVisible = Math.min(3, blogPosts.length);
+  for (let i = 0; i < maxVisible; i++) {
+    visiblePosts.push(blogPosts[(currentSlide + i) % blogPosts.length]);
+  }
+
   return (
     <section id="blog" className="py-20 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
           Latest Blog Posts
         </h2>
-        
+
         <div className="relative">
           {/* Blog Posts Container */}
-          <div 
+          <div
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
             onMouseEnter={() => setAutoScroll(false)}
             onMouseLeave={() => setAutoScroll(true)}
           >
-            {blogPosts.slice(0, 3).map((post, index) => (
-              <div 
+            {visiblePosts.map((post, index) => (
+              <div
                 key={index}
                 className="bg-gray-800/50 rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 group"
               >
@@ -178,6 +185,23 @@ const BlogCarousel = () => {
               </div>
             ))}
           </div>
+          {/* Navigation Buttons */}
+          {blogPosts.length > 3 && (
+            <>
+              <button
+                onClick={() => handleSlide('left')}
+                className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-gray-800/50 rounded-full hover:bg-gray-700 transition"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={() => handleSlide('right')}
+                className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-gray-800/50 rounded-full hover:bg-gray-700 transition"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </>
+          )}
         </div>
       </div>
     </section>
